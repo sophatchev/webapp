@@ -12,6 +12,14 @@ pipeline {
             ''' 
       }
     }
+    
+    stage ('Check-Git-Secrets') {
+    steps {
+        sh 'rm trufflehog || true'
+        sh 'sudo docker pull cincan/trufflehog --json docker pull cincan/trufflehog > trufflehog'
+        sh 'cat truffelhog' 
+      }
+    }
 
     stage ('Build') {
       steps {

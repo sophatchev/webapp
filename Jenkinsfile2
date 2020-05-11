@@ -21,7 +21,7 @@ pipeline {
       }
     }
 
-    stage ('Source Code Analysis')(
+    stage ('Source Code Analysis') {
       steps {
         sh 'rm owasp || true'
         sh 'wget "https://raw.githubusercontent.com/sophatchev/webapp/master/owasp-dependency-check2.sh" '
